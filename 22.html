@@ -1,48 +1,139 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>洛谷 | 计算机科学教育新生态</title>
+    <title>洛谷</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft YaHei";
+            font-family: "Microsoft Yahei", sans-serif;
         }
-        .side {
-            background-color: rgb(52,73,94);
-            color: rgb(221,221,221);
+        body {
+            background-color: #f5f5f5;
         }
-        .lg-toolbar {
-            display: none;
-        }
-        .zheng {
+        /* 顶部导航栏 */
+        .container .link-container {
+            align-items: center;
             box-sizing: border-box;
             color: rgb(51, 51, 51);
             display: flex;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            flex-direction: row;
             font-size: 16px;
-            font-weight: 400;
-            line-height: 25.6px;
+            line-height: 24px;
+            margin-left: 32px;
             text-rendering: optimizeLegibility;
-            unicode-bidi: isolate;
         }
-        .top-progress {
+        .left {
             box-sizing: border-box;
             color: rgb(51, 51, 51);
+            display: flex;
+            flex-direction: row;
+            font-size: 16px;
+            height: 48px;
+            line-height: 24px;
+            text-rendering: optimizeLegibility;
+        }
+        .header-logo {
+            height: 48px;
+            width: 94px;
+        }
+        a.header-link.color-none {
+            background-color: rgba(0,0,0,0);
+            box-sizing: border-box;
+            color: rgb(38, 38, 38);
+            cursor: inline;
             display: block;
             font-size: 16px;
-            height: 4px;
-            left: 0;
-            line-height: 25.6px;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            position: fixed;
-            right: 0;
+            line-height: 24px;
+            margin-right: 32px;
+            text-decoration-style: solid;
+            text-decoration-line: none;
+            text-rendering: optimizeLegibility;
+        }
+        .helper {
+            box-sizing: border-box;
+            color: rgb(51, 51, 51);
+            display: inline-block;
+            font-size: 16px;
+            line-height: 24px;
+            text-rendering: optimizeLegibility;
+        }
+        .user-nav {
+            align-items: center;
+            box-sizing: border-box;
+            color: rgb(51, 51, 51);
+            display: flex;
+            flex-direction: row;
+            font-size: 16px;
+            line-height: 24px;
+            margin-left: auto;
+            text-rendering: optimizeLegibility;
+        }
+        .search-wrap {
+            box-sizing: border-box;
+            color: rgb(51, 51, 51);
+            display: inline-block;
+            font-size: 16px;
+            line-height: 21.6px;
+            margin-right: 5.76px;
+            overflow: hidden;
+            width: 0;
+            position: relative;
+            text-rendering: optimizeLegibility;
+        }
+        input[type="text"] {
+            background-color: rgb(245, 245, 245);
+            border-radius: 4px;
+            border: none;
+            box-sizing: border-box;
+            color: rgb(51, 51, 51);
+            font-size: 14px;
+            height: 32px;
+            line-height: 21.6px;
+            padding-left: 8px;
+            padding-right: 8px;
+            width: 0px;
+            transition: width 0.3s ease 0s;
+        }
+        .icon-sousuo {
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline;
+            font-size: 16px;
+            height: 17px;
+            line-height: 24px;
+            width: auto;
+        }
+        .icon-sousuo img {
+            height: 17px;
+            width: 17px;
+            vertical-align: 4px;
 
         }
+        .login-color-none {
+            background-color: rgba(0,0,0,0);
+            box-sizing: border-box;
+            color: rgb(51, 51, 51);
+            cursor: pointer;
+            display: inline;
+            font-size: 12.8px;
+            line-height: 19.2px;
+            margin-left: 7.4px;
+            text-decoration-style: solid;
+            text-decoration-line: none;
+            text-rendering: optimizeLegibility;
+            width: auto;
+        }
+       .a-avatar {
+            border-radius: 50%;
+            height: 35px;
+            margin-left: 13px;
+            width: 35px;
+       }
+        /* 侧边栏 */
         .side {
             background-color: rgb(52,73,94);
             box-sizing: border-box;
@@ -139,8 +230,8 @@
             font-size: 16px;
             font-weight: 400;
             line-height: 25.6px;
-            margin-left: 59.1953px;
-            min-height: 100vh;
+            margin-left: 59.2px;
+            min-height: 765px;
             text-rendering: optimizeLegibility;
         }
         .headss {
@@ -216,28 +307,621 @@
             text-decoration-line: none;
             text-rendering: optimizeLegibility;
         }
-        .header-logo {
+         .header-logo {
             height: 48px;
             width: 94px;
         }
-        #app-old {
-            display: block;
-            margin-bottom: 2em;
+        /* 主内容区 */
+        .main {
             box-sizing: border-box;
-            max-width: 100%;
+            display: block;
+            font-size: 16px;
+            line-height: 24px;
+            margin-left: 120px;
+            margin-right: 120px;
+            padding: 20px;
+            padding-top: 20px;
         }
-        code {
-            font-family: monospace,"Courier New";
+        /* 轮播图 */
+        .carou-container {
+            height: 321px;
+            /* width: 650px; */
+            background-color: #fff;
+            /* border-radius: 0%; */
+            padding: 20px;
+            /* border: 25px solid #e0e0e0; */
+            margin-bottom: 20px;
+            /* margin: 0px auto;; */
+            display: flex;
+            /* align-items: center; */
+            position: relative;
+            overflow: hidden;
+        }
+        .car-container {
+            display: flex;
+            /* width: 100%; */
+            width: 647px;
+            height: 270px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            /* scroll-behavior: smooth; */
+            margin-right: 65px;
+            padding-bottom: 20px;
+        }
+        .car-container .prev-button{
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            height: 20px;
+            width: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #f0f0f0;
+            z-index: 1;
+            /* transform: translateY(-50%); */
+            /* background: repeat url('C:\Users\kouki\Desktop\rav\lyw.jpg') ; */
+        }
+        .car-container .next-button{
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            /* transform: translateY(-50%); */
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #f0f0f0;
+            z-index: 1;
+            /* background: no-repeat url('C:\Users\kouki\Desktop\rav\lyw.jpg') ; */
+        }
+        .car-container .prev-button:hover {
+            background-color: rgba(0, 0, 0, 0.65);
+            color: #fff;
+        }
+        .car-container .next-button:hover {
+            background-color: rgba(0, 0, 0, 0.65);
+            color: #fff;
+        }
+        .car-item {
+            min-width: 3000px;
+            height: 100%;
+
+            /* display: flex; */
+            align-items: center;
+        }
+        .car-container .car-item{
+            display: flex;
+            height: 100%;
+
+        }
+        .car-container .car-item img{
+            width: 647px;
+            height: 260px;
+        }
+        /* .car-container .car-item {
+            transform: translateX(-1000px);
+        } */
+
+        /* .carousel-book {
+            width: 150px;
+            margin-right: 30px;
+        }
+        .car-desc h2 {
+            color: #27ae60;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .car-desc p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 5px 0;
+        } */
+        .carou-container .page {
+            position: absolute;
+            /* bottom: 30px; */
+            box-sizing: border-box;
+            bottom: 10px;
+            left: 270px;
+            right: 0;
+            /* text-align: center; */
+            bottom: 10px;
+            background-color: rgba(173, 116, 116, 0);
+            width: 100%;
+            height: 30px;
+            display: flex;
+            gap: 8px;
+            /* align-items: center;
+            justify-content: center; */
+        }
+        .carou-container .page span {
+            width: 7px;
+            height: 7px;
+            transition: background-color 0.3s;
+            border-radius: 50%;
+            background-color: #c1c1c1;
+            /* color: #3498db; */
+            margin: 10px 5px;
+            cursor: pointer;
+        }
+        .carou-container .page span.active {
+            background-color: #3498db;
+        }
+        .carousel-footer {
+            background-color: #27ae60;
+            color: #fff;
+            padding: 8px 15px;
+            font-size: 14px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #bdc3c7;
+            display: inline-block;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #27ae60;
+        }
+        /* 日期卡片 */
+        .date-all {
+            display: flex;
+            /* flex-direction: column; */
+            gap: 10px;
+           margin-bottom: 23px;
+        }
+        .date-card {
+            /* width: 200px; */
+
+            height: 160px;
+            margin-top: 40px;
+            /* margin-bottom: 25px; */
+            /* margin-right: 25px; */
+            position: absolute;
+            right: 120px;
+            top: 20px;
+            /* display: flex; */
+            align-items: center;
+            /* gap: 15px; */
+            text-align: center;
+            color: #b3b3b3;
+            /* flex-direction: column; */
+        }
+        .date-month {
+            flex: 1;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            vertical-align: top;
+            font-size: 16px;
+            font-weight: 700;
+            /* flex-direction: column; */
+            /* display: flex; */
+            line-height: 17px;
+            width: 1px;
+    
+            color: rgba(5,67,16,0.79)
+        }
+        .date-day {
+            flex: 1;
+            font-size: 85px;
+            font-weight: 700;
+            line-height: 55px;
+            color: rgba(5,67,16,0.79);
+        }
+        .date-week {
+            flex: 1;
+            /* flex-direction: column; */
+            align-items: center;
+            font-size: 16px;
+            vertical-align: top;
+            font-weight: 700;
+            width: 1px;
+            line-height: 17px;
+            /* width: 200px; */
+            /* flex-direction: column; */
+
+            color: rgba(5,67,16,0.79);
+        }
+        
+        .date-tip {
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 15px;
+            color: rgb(127,127,127);
+            margin-top: 5px;
+        }
+        .date-tip strong {
+            color: rgb(81,81,81);
+            font-weight: 600;
+        }
+        /* 功能区 */
+        .section {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            height: 205px;
+            gap: 20px;
+            background-color: rgb(51, 51, 51);
+        }
+        /* .card-left, .card-right {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        } */
+        .card-left {
+            display: block;
+            float: left;
+            position: absolute;
+            line-height: 24px;
+            font-size: 16px;
+            font-weight: 400;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #ffffff;
+            border-radius: 0;
+            flex: 1;
+            padding: 15px;
+            height: 205px;
+            width: 25%;
+            border-right: 17px solid rgb(245, 245, 245);
+        }
+        .card-left h3 {
+            margin-bottom: 15px;
+        }
+        .card-right {
+            display: block;
+            float: left;
+            position: absolute;
+            right: 0;
+            height: 205px;
+            line-height: 24px;
+            font-size: 16px;
+            font-weight: 400;
+            padding-left: -10px 0;
+            padding-right: -10px 0;
+            background-color: #fff;
+            border-radius: 0;
+            flex: 1;
+            padding: 15px;
+            width: 75%;
+        }
+        .card-border-1 {
+            display: flex;
+            float: left;
+            display: block;
+            /* padding-left: 15px; */
+            padding-right: 20px;
+
+            /* margin-left: 10px; */
+            /* margin-right: 10px; */
+            color: rgba(0, 0, 0, 0.75);
+        }
+        .card-border-2 {
+            display: block;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: rgba(0, 0, 0, 0.75);
+        }
+        .jump-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+        }
+        .jump-box input {
+            background-color: #fff;
+            padding: 8px;
+            border: 1px solid rgb(52,152,219);
+            border-radius: 0%;
+            font-size: 14px;
+        }
+        .jump-buttons {
+            margin-top: 16px;
+            display: flex;
+            gap: 10px;
+        }
+        :focus {
+            outline: none;
+            border-color: rgb(41,128,185);
+            box-shadow: 0 0 5px rgba(41,128,185,0.5);
+        }
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-red {
+            background-color: rgb(221,81,76);
+            color: #fff;
+        }
+        .btn-blue {
+            background-color: rgb(52,152,219);
+            color: #ffffff;
+        }
+        .steps {
+            display: flex;
+            gap: 10px;
+        }
+        .step-item {
+            flex: 1;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        .step-item img {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        /* 公告 */
+        .two-g {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 25px;
+        }
+        .news {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        /* 公告 */
+        .match-list {
+            background-color: #fff;
+            /* flex: auto; */
+            padding-top: 18px;
+            padding-right: 18px;
+            padding-left: 18px;
+            /* margin-right: 18px; */
+            /* padding-bottom: 18px; */
+            /* width: 780px; */
+            height: 220px;
+        }
+        .match-item {
+            display: flex;
+            align-items: center;
+            margin-right: 90px;
+            padding: 10px 0;
+            /* border-bottom: 1px solid #f0f0f0; */
+        }
+        .match-tag {
+            background-color: #5be73c;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+        .match-tag.red {
+            background-color: #ae2727;
+        }
+        .match-info {
+            flex: 1;
+        }
+        .match-title {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        .match-time {
+            font-size: 12px;
+            color: #999;
+        }
+        .announcement {
+            background-color: #fff;
+            padding-top: 16px;
+            padding-right: 18px;
+            padding-left: 18px;
+            padding-bottom: 25px;
+            margin-left: 21px;
+            line-height: 24px;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        .announcement ul {
+            list-style: none;
+        }
+        .announcement li {
+            padding: 8px 0;
+            /* border-bottom: 1px solid #f0f0f0; */
+        }
+        .announcement a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .links {
+            margin-top: -20px;
+            background-color: #fff;
+            padding: 18px;
+            margin-left: 21px;
+            line-height: 24px;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        .link-black {
+            color: #000;
+        }
+        /* 最近讨论 */
+        .discussion {
+            background-color: #fff;
+            padding-left: 18px;
+            padding-top: 16px;
+            /* padding-right: 18px; */
+            /* padding; */
+            /* width: 780px; */
+            /* height: 320px; */
+        }
+        .discussion-list {
+            margin-top: 15px;
+            display: grid;
+            width: 780px;
+            padding-right: 90px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .discussion-item {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background-color: #fafafa;
+            border-radius: 4px;
+            border: 1px solid #2ea0e7;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .discussion-title {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        .discussion-meta {
+            font-size: 12px;
+            color: #999;
+        }
+        .pin {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 11px;
+            margin-left: 5px;
+        }
+        .link-group {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        .link-group h4 {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            color: #626262;
+            margin-bottom: 5px;
+        }
+        .link-group p {
+            font-size: 16px;
+            color: #3498db;
+            line-height: 1.5;
+        }
+        .wrapper-xia {
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            height: 170px;
+            padding-left: 16px;
+            /* padding-right: 16px; */
+            font-size: 16px;
+            line-height: 24px;
+            color: rgba(0, 0, 0, 0.75);
+            /* background-color: #fff; */
+        }
+        .footer-background {
+            position: absolute;
+            display: block;
+            height: 170px;
+            max-width: none;
+            z-index: -1;
+            height: 100%;
+            background-color: rgb(51, 51, 51);
+            width: 100%;
+
+        }
+        .footer {
+            width: 100%;
+            align-items: center;
+            display: flex;
+            height: 170px;
+            max-width: 1200px;
+            position: relative;
+            margin-left: 0px;
+            padding-bottom: 14px;
+            padding-left: 14px;
+            /* padding-right: 14px; */
+            padding-top: 14px;
+            font-size: 14px;
+        }
+        .footer img {
+            height: 60px;
+            width: 41px;
+
+        }
+        /* .qr-img img {
+            height: 59px;
+            width: 60px;
+        } */
+        .info {
+            /* position: absolute; */
+            /* right: 35px; */
+            box-sizing: border-box;
+            /* display: block; */
+            flex: 1;
+            height: auto;
+            position: relative;
+            flex-grow: 1;
+            flex-shrink: 1;
+            text-align: right;
+            transform: translateX(100px);
+            color: rgba(255,255,255,0.9);
+            margin-left: 80px;
+        }
+        .d-color-default {
+            font-size: 14px;
+            line-height: 21px;
+            text-align: right;
+            text-decoration-line: none;
+            color: rgba(255,255,255,0.75);
+            cursor: pointer;
+        }
+        .slogan {
+            display: block;
+            margin-left: 20px;
+            font-size: 18.2px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: rgba(255,255,255,0.9);
+        }
+        .logo-img {
+            margin-left: 120px;
+        }
+        .qr-img {
+            box-sizing: border-box;
+            overflow-y: clip;
+            overflow-x: clip;
+            vertical-align: middle;
+            margin-left: 70px;
+            height: 60px;
+            width: 60px;
+        }
+        .qr-img img {
+            height: 60px;
+            width: 59px;
         }
     </style>
 </head>
 <body>
-    <div id="app" class="zheng">
+     <div id="app" class="zheng">
         <div class="top-progress">
             <div class="bar-done" style="background: rgb(52, 152, 219);"></div>
         </div>
-        <!-- 侧边 -->
-        <nav class="side">
+        <!-- 侧边栏 -->
+     <nav class="side">
             <div style="background-color: rgb(52,152,219);">
                 <a href="#" class="logo-wrap">
                     <img src="https://fecdn.luogu.com.cn/luogu/logo-single.png?0a231b572e3eb12887faedad7d00e829" alt="Luogu">
@@ -277,8 +961,8 @@
                 <span class="text">专栏</span>
             </a>
         </nav>
-
-        <div class="main-container">
+    <!-- 顶部导航 -->
+    <div class="main-container">
             <div class="headss">
                 <div class="background" style="background: linear-gradient(90deg,rgb(35,37,38),rgb(65,67,69));filter: blur(0px) brightness(100%);"></div>
                 <div class="container">
@@ -292,652 +976,291 @@
                         <a href="#" target="_blank" class="header-link color-none">洛谷有题</a>
                         <span class="helper"></span>
                     </div>
+                    <!-- 搜索登录注册 -->
                     <nav class="user-nav">
                         <div>
                             <div class="search-wrap">
                                 <input type="text" placeholder="输入题号搜索题目">
                             </div>
-                            <a href="#" class="icon color-none">
-                                <svg></svg>
+                            <a href="#" class="icon-sousuo">
+                                <img src="https://image2url.com/r2/default/images/1769515185804-8a6246e0-ded2-4604-9ddf-e41e88046a0c.png" >
                             </a>
                         </div>
-                        <a href="#" class="login color-none">
+                        <a href="#" class="login-color-none">
                             <span>登录</span>
                         </a>
-                        <a href="#" class="login color-none">
+                        <a href="#" class="login-color-none">
                             <span>注册</span>
                         </a>
-                        <img src="https://cdn.luogu.com.cn/upload/usericon/1.png" class="avater">
+                        <img src="https://cdn.luogu.com.cn/upload/usericon/1.png" class="a-avatar" alt="用户头像">
                     </nav>
                 </div>
             </div>
 
-            <main class="mobile-body" style="background-color: rgb(239,239,239);">
-                <div id="app-old">
-                    <script></script>
-                    <div class="index-content">
-                        <div class="am-g">
-                            ::before{content: " ";}
-                            <div class="mini-left">
-                                <div class="lun" id="ld-slider"></div>
-                                <div class="am-viewport" style="overflow: hidden; position: relative;">
-                                    <ul class="am-slides" style="width: 1200%; transition-duration: 0.6s; transform: translate3d(-954px,0px,0px);">
-                                        ::before
-                                        <li class="clone" aria-hidden="true" style="width: 477px; float: left;display: block;">
-                                            <a target="_blank" href="#">
-                                                <img src="https://cdn.luogu.com.cn/upload/image_hosting/v70qsqm4.png" draggable="false">
-                                            </a>
-                                        </li>
-                                         <li class="clone" aria-hidden="true" style="width: 477px; float: left;display: block;">
-                                            <a target="_blank" href="#">
-                                                <img src="https://ipic.luogu.com.cn/lgr261.png" draggable="false">
-                                            </a>
-                                        </li>
-                                         <li class="clone" aria-hidden="true" style="width: 477px; float: left;display: block;">
-                                            <a target="_blank" href="#">
-                                                <img src="http://ipic.luogu.com.cn/yugu26s/ap/sxbanner.png" draggable="false">
-                                            </a>
-                                        </li>
-                                         <li class="clone" aria-hidden="true" style="width: 477px; float: left;display: block;">
-                                            <a target="_blank" href="#">
-                                                <img src="https://ipic.luogu.com.cn/lgr261.png" draggable="false">
-                                            </a>
-                                        </li> <li class="clone" aria-hidden="true" style="width: 477px; float: left;display: block;">
-                                            <a target="_blank" href="#">
-                                                <img src="https://cdn.luogu.com.cn/upload/image_hosting/v70qsqm4.png" draggable="false">
-                                            </a>
-                                        </li> <li class="clone" aria-hidden="true" style="width: 477px; float: left;display: block;">
-                                            <a target="_blank" href="#">
-                                                <img src="https://ipic.luogu.com.cn/lgr261.png" draggable="false">
-                                            </a>
-                                        </li>
-                                        ::after
-                                    </ul>
-                                </div>
-                                <ol class="">
-                                    <li>
-                                        <a class>1</a>
-                                        <i></i>
-                                    </li>
-                                    <li>
-                                        <a class>2</a>
-                                        <i></i>
-                                    </li>
-                                    <li>
-                                        <a class>3</a>
-                                        <i></i>
-                                    </li>
-                                    <li>
-                                        <a class>4</a>
-                                        <i></i>
-                                    </li>
-                                </ol>
-                                <ul class="direction-nav">
-                                    <li>
-                                        <a class="prev" href="#">
-                                            ::before
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="next" href="#">
-                                            ::after
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="mini-right"></div>
-                            ::after
-                        </div>
-                        <div class="am-g">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                        <div class="am-g"></div>
+    
+    <!-- 主内容区 -->
+    <div class="main">
+        <!-- 轮播图 -->
+        <div class="carou-container">
+            <div class="car-container">
+            <div class="car-item">
+                <img src="https://cdn.luogu.com.cn/upload/image_hosting/v70qsqm4.png" class="carousel-book">
+                <img src="https://ipic.luogu.com.cn/lgr261.png" class="carousel-book">
+                <img src="http://ipic.luogu.com.cn/yugu26s/ap/sxbanner.png" class="carousel-book">
+                <img src="https://ipic.luogu.com.cn/yugu24a/banner-jinjie.png" class="carousel-book">
+            </div>
+            <div class="button prev-button"></div>
+            <div class="button next-button"></div>
+            
+            <!-- <div class="car-desc">
+                <div class="button prev-btn"></div>
+                <div class="button next-btn"></div>
+            </div> -->
+        </div>
+        <div class="page">
+                <span class="active"></span>
+                <span></span> <span></span> <span></span>
+        </div>
+
+            <div class="date-card">
+                <div class="date-all">
+                <div class="date-month">一月大</div>
+                <span class="date-day">17</span>
+                <div class="date-week">星期六</div>
+                </div>
+                <div class="date-a"><div class="date-tip">距<strong>CSP-J/S 2026第一轮</strong>还剩<strong>244天</strong><br>距<strong>CSP-J/S 2026第二轮</strong>还剩<strong>286天</strong></div>
+            </div></div>
+
+
+            <!-- <div class="carousel-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot active"></span>
+            </div> -->
+    
+        </div>
+        <!-- 功能区 -->
+        <div class="section">
+            <div class="card-border-1">
+            <div class="card-left">
+                <h3>问题跳转</h3>
+                <div class="jump-box">
+                    <input type="text" placeholder="例：P1001，可跳至A+B">
+                    <div class="jump-buttons">
+                        <button class="btn btn-red">跳转</button>
+                        <button class="btn btn-blue">随机跳题</button>
                     </div>
-                    <!-- 日期 -->
-                    <div calss="modal">
-                        <div class="">
-                            <span class="small">一月大</span>
-                            <span class="big">24</span>
-                            <span class="small">星期六</span>
-                        </div>
-                        <div class="am-g">
-                            ::before
-                            <div class="lg-small">
-                                <strong>CSP-J/S 2026 第一轮</strong>
-                                "还剩"
-                                <strong>237天</strong>
-                                <br>
-                                "距"
-                                <strong>CSP-J/S 2026 第二轮</strong>
-                                "还剩"
-                                <strong>279天</strong>
-                                <br>
-
-                            </div>
-                            ::after
-                        </div>
-
+                </div>
+            </div>
+            </div>
+            <div class="card-border-2">
+            <div class="card-right">
+                <div class="steps">
+                    <div class="step-item">
+                        <img src="https://www.luogu.com.cn/images/index/step1.png" width="250">
+                         
+                    </div>
+                    <div class="step-item">
+                        <img src="https://www.luogu.com.cn/images/index/step2.png" width="250">
                         
-                        <div class="am-g">
-                            ::before
-                            <div class="am-u-md-3">
-                                <div class="lg-">
-                                    <h2>问题跳转</h2>
-                                    <div class="">
-                                        <input type="text" class="am-form-field" placeholder="例:P1001,可跳至A+B" name="toproblem">
-                                    </div>
-                                    <p>
-                                        <button class="am-btn" name="goto">跳转</button>
-                                        <button class="am-btn" name="gotorandom">随机跳题</button>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="am-u-md-9">
-                                <div class="" style="padding: 0">
-                                    <div class="am-g" style="padding: 15px;">
-                                        ::before
-                                        <div class="">
-                                            <img src="https://www.luogu.com.cn/images/index/step1.png" width="250">
-                                        </div>
-                                        <div class="">
-                                            <img src="https://www.luogu.com.cn/images/index/step2.png" width="250">
-                                        </div>
-                                        <div class="">
-                                            <img src="https://www.luogu.com.cn/images/index/step3.png" width="250">
-                                        </div>
-                                        ::after
-                                    </div>
-                                </div>
-                            </div>
-                            ::after
+                    </div>
+                    <div class="step-item">
+                        <img src="https://www.luogu.com.cn/images/index/step3.png" width="250">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="two-g">
+        <!-- 近期比赛与最近讨论 -->
+        <div class="news">
+            <div class="card match-list">
+                <h3>近期比赛</h3>
+                <div class="match-item">
+                    <span class="match-tag red">官方比赛</span>
+                    <div class="match-info">
+                        <div class="match-title">[LGR-262-Div.1] 洛谷1月月赛 III</div>
+                        <div class="match-time">未开始 168时36分后<br>01-18 14:00 ~ 01-18 18:00</div>
+                    </div>
+                    <span class="match-tag">Rated</span>
+                </div>
+                <div class="match-item">
+                    <span class="match-tag red">官方比赛</span>
+                    <div class="match-info">
+                        <div class="match-title">[LGR-262-Div.2] 洛谷1月月赛 III</div>
+                        <div class="match-time">未开始 168时36分后<br>01-18 14:00 ~ 01-18 18:00</div>
+                    </div>
+                    <span class="match-tag">Rated</span>
+                </div>
+            </div>
+            <div class="card discussion">
+                <h3>最近讨论</h3>
+                <div class="discussion-list">
+                    <div class="discussion-item">
+                        <img src="https://cdn.luogu.com.cn/upload/usericon/3.png" alt="用户头像" class="avatar">
+                        <div class="discussion-info">
+                            <div class="discussion-title">RemoteJudge 服务中断情况公告</div>
+                            <div class="discussion-meta">洛谷 站务版 @04-19 15:12 5578回复 <span class="pin">置顶</span></div>
                         </div>
-                        <div class="am-g">
-                            ::before
-                            <div class="">
-                                <div class="lg-article">
-                                    <h2>本站公告</h2>
-                                    <p>
-                                        <a href="#">洛谷新用户必读</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">洛谷主题库题目规范</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">题解审核及反馈要求</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">洛谷讨论区规范</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">洛谷专栏全站推荐规范</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">管理员名单</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">评测机语言环境信息</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">【1.3 更新】洛谷题解补充计划</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">《深入浅出》相关反馈入口</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">2025年度总结已上线</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">洛谷2025年鉴</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">洛谷更新日志</a>
-                                    </p>
-                                    <p>
-                                        <a href="#">公开比赛与官方比赛规范</a>
-                                    </p>
-                                </div>
-                                <div class="">
-                                    <h2>友情链接</h2>
-                                    <p>
-                                        <strong>推荐题库</strong>
-                                        <br>
-                                        <a href="#" target="_blank">LibreOJ</a>
-                                        "|"
-                                        <a href="#" target="_blank">Vojos</a>
-                                        "|"
-                                        <a href="#" target="_blank">HydroOJ</a>
-                                    </p>
-                                    <p>
-                                        <strong>洛谷服务</strong>
-                                        <br>
-                                        <a href="#" target="_blank">《深入浅出程序设计竞赛》</a>
-                                        <br>
-                                        <a href="#" target="_blank">洛谷网校-算法竞赛学习</a>
-                                        <br>
-                                        <a href="#" target="_blank">学校编程训练辅助工具</a>
-                                        <br>
-                                        <a href="#" target="_blank">协办企业院校在线编程比赛</a>
-                                    </p>
-                                    <p></p>
-                                </div>
-                            </div>
-                            <div class="am-u-lg-9">
-                                <div class="lg-article">
-                                    <h2 style="margin-bottom: 5px;">近期比赛</h2>
-                                    <section class="">
-                                        <header class="am-panel-hd">
-                                            <h3 class="am-panel-title"><a href="#">洛谷2025年度试题推荐选集</a></h3>
-                                        </header>
-                                        <div class="am-panel-bd">
-                                            <span class="">
-                                                <span class="">官方比赛</span>
-                                                <br>
-                                                <span class="">IOI</span>
-                                            </span>
-                                            <span class="">
-                                                <strong>进行中</strong>
-                                                "剩8天19时16分"
-                                                <br>
-                                                <a class="colored" href="#" target="_blank">洛谷官方团队</a>
-                                            </span>
-                                            <span class="">
-                                                "01-24 17:00"
-                                                <br>
-                                                "02-04 17:00"
-                                            </span>
-                                        </div>
-                                    </section>
-                                    <section class="">
-                                        <header class="am-panel-hd">
-                                            <h3 class="am-panel-title"><a href="#">COCI 2025/2026 #4 Unofficial Mirror</a></h3>
-                                        </header>
-                                        <div class="am-panel-bd">
-                                            <span class="">
-                                                <span class="">团队公开赛</span>
-                                                <br>
-                                                <span class="">IOI</span>
-                                            </span>
-                                            <span class="">
-                                                <strong>未开始</strong>
-                                                "1天17时16分后"
-                                                <br>
-                                                <a class="colored" href="#" target="_blank">Unofficial Mirror 工作组</a>
-                                            </span>
-                                            <span class="">
-                                                "01-28 15:00"
-                                                <br>
-                                                "01-28 18:00"
-                                            </span>
-                                        </div>
-                                    </section>
-                                    <section class="">
-                                        <header class="am-panel-hd">
-                                            <h3 class="am-panel-title"><a href="#">嘟嘟哒哒大作战</a></h3>
-                                        </header>
-                                        <div class="am-panel-bd">
-                                            <span class="">
-                                                <span class="">团队公开赛</span>
-                                                <br>
-                                                <span class="">IOI</span>
-                                            </span>
-                                            <span class="">
-                                                <strong>未开始</strong>
-                                                "2天20时16分后"
-                                                <br>
-                                                <a class="colored" href="#" target="_blank">南极洲企鹅语学校</a>
-                                            </span>
-                                            <span class="">
-                                                "01-29 18:00"
-                                                <br>
-                                                "01-29 22:00"
-                                            </span>
-                                        </div>
-                                    </section>
-                                    <section class="">
-                                        <header class="am-panel-hd">
-                                            <h3 class="am-panel-title"><a href="#">【LGR-263-Div.4】洛谷入门赛 #43</a></h3>
-                                            <span class="">Rated</span>
-                                        </header>
-                                        <div class="am-panel-bd">
-                                            <span class="">
-                                                <span class="">官方比赛</span>
-                                                <br>
-                                                <span class="">IOI</span>
-                                            </span>
-                                            <span class="">
-                                                <strong>未开始</strong>
-                                                "3天21时16分后"
-                                                <br>
-                                                <a class="colored" href="#" target="_blank">洛谷官方团队</a>
-                                            </span>
-                                            <span class="">
-                                                "01-30 19:00"
-                                                <br>
-                                                "01-30 21:00"
-                                            </span>
-                                        </div>
-                                    </section>
-                                    <section class="">
-                                        <header class="am-panel-hd">
-                                            <h3 class="am-panel-title"><a href="#">[ICPC2024 Chengdu R] ICPC 2024 区域...</a></h3>
-                                            <span class="">Rated</span>
-                                        </header>
-                                        <div class="am-panel-bd">
-                                            <span class="">
-                                                <span class="">官方比赛</span>
-                                                <br>
-                                                <span class="">ICPC</span>
-                                            </span>
-                                            <span class="">
-                                                <strong>已结束</strong>
-                                                "比赛已结束"
-                                                <br>
-                                                <a class="colored" href="#" target="_blank">洛谷官方团队</a>
-                                            </span>
-                                            <span class="">
-                                                "01-26 13:00"
-                                                <br>
-                                                "01-26 18:00"
-                                            </span>
-                                        </div>
-                                    </section>
-                                    <section class="">
-                                        <header class="am-panel-hd">
-                                            <h3 class="am-panel-title"><a href="#">chaynOI Round 2</a></h3>
-                                            <span class="">Rated</span>
-                                        </header>
-                                        <div class="am-panel-bd">
-                                            <span class="">
-                                                <span class="">团队公开赛</span>
-                                                <br>
-                                                <span class="">IOI</span>
-                                            </span>
-                                            <span class="">
-                                                <strong>已结束</strong>
-                                                "比赛已结束"
-                                                <br>
-                                                <a class="colored" href="#" target="_blank">chaynOI</a>
-                                            </span>
-                                            <span class="">
-                                                "01-25 14:00"
-                                                <br>
-                                                "01-25 18:00"
-                                            </span>
-                                        </div>
-                                    </section>
-                                </div>
-                                <div class="lg-article">
-                                    <h2>最近讨论</h2>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <div>
-                                            <div>
-                                                <a href="#" class="center"><img src="https://cdn.luogu.com.cn/upload/usericon/3.png" class="am-comment-avater"></a>
-                                            </div>
-                                            <div class="">
-                                                <a href="#"></a>
-                                                <br>
-                                                <span class="lg-small"><a class="" href="#" target="_blank">洛谷</a></span>
-                                                <span class="lg-small">
-                                                    <a href="#"></a>
-                                                    <br>
-                                                    <span class=""></span>
-                                                    <span class=""></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
-                            </div>
-                            ::after
+                    </div>
+                    <div class="discussion-item">
+                        <img src="https://cdn.luogu.com.cn/upload/usericon/65363.png" alt="用户头像" class="avatar">
+                        <div class="discussion-info">
+                            <div class="discussion-title">洛谷1月月赛III 赛时答疑贴</div>
+                            <div class="discussion-meta">csyakuoi 学术版 @01-17 21:03 30回复 <span class="pin">置顶</span></div>
+                        </div>
+                    </div>
+                    <div class="discussion-item">
+                        <img src="https://cdn.luogu.com.cn/upload/usericon/1.png" alt="用户头像" class="avatar">
+                        <div class="discussion-info">
+                            <div class="discussion-title">[GTOI] Round 2 赛后致歉贴</div>
+                            <div class="discussion-meta">ARISz 学术版 @01-17 19:40 80回复 <span class="pin">置顶</span></div>
+                        </div>
+                    </div>
+                    <div class="discussion-item">
+                        <img src="https://cdn.luogu.com.cn/upload/usericon/1.png" alt="用户头像" class="avatar">
+                        <div class="discussion-info">
+                            <div class="discussion-title">来推荐一道好题！</div>
+                            <div class="discussion-meta">chen_zhe 站务版 @01-13 17:34 225回复 <span class="pin">置顶</span></div>
+                        </div>
+                    </div>
+                    <div class="discussion-item">
+                        <img src="https://cdn.luogu.com.cn/upload/usericon/1.png" alt="用户头像" class="avatar">
+                        <div class="discussion-info">
+                            <div class="discussion-title">省选计划 2025-2026</div>
+                            <div class="discussion-meta">kkksc03 吉祥物版 @01-14 16:00 381回复 <span class="pin">置顶</span></div>
+                        </div>
+                    </div>
+                    <div class="discussion-item">
+                        <img src="https://cdn.luogu.com.cn/upload/usericon/1.png" alt="用户头像" class="avatar">
+                        <div class="discussion-info">
+                            <div class="discussion-title">求条80pts WA on #3</div>
+                            <div class="discussion-meta">congruilu P1192 省选问题 @01-17 21:19 0回复</div>
                         </div>
                     </div>
                 </div>
-            </main>
+            </div>
+            
+        </div>
 
-            <!-- 最下的黑色部分 -->
-            <div class="">
-                <div class="background" style="background: rgb(51, 51, 51);filter: blur(0px) brightness(100%);"></div>
-                <img src="https://fecdn.luogu.com.cn/luogu/logo-single.png?0a231b572e3eb12887faedad7d00e829" class="logo-img">
-                <div class="slogan">在洛谷<br>享受Coding的欢乐</div>
-                <img src="https://fecdn.luogu.com.cn/luogu/wechat_qr.png?b14b3f14422842b842e982efe6c41eb9" class="qr-img">
-                <div class="info">
-                    <p>
-                        <a href="#" colorscheme="default" class="">关于洛谷</a>
-                        "|"
-                        <a href="#" colorscheme="default" class="">帮助中心</a>
-                        "|"
-                        <a href="#" colorscheme="default" class="">用户协议</a>
-                        "|"
-                        <a href="#" colorscheme="default" class="">联系我们</a>
-                        <br>
-                        <a href="#" colorscheme="default" class="">小黑屋</a>
-                        "|"
-                        <a href="#" colorscheme="default" class="">陶片放逐</a>
-                        "|"
-                        <a href="#" colorscheme="default" class="">社区规则</a>
-                        "|"
-                        <a href="#" target="_blank" class="">招贤纳才</a>
-                        <br>
-                        Developed by the 
-                        <a href="#" target="_blank" class="color-default">Luogu Dev Team</a>
-                        <br>
-                        2013-2026,©洛谷
-                        <br>
-                        增值电信业务经营许可证 沪B2-20200477
-                        <br>
-                        <a href="#" target="_blank" class="color-default">沪ICP备18008322号</a>
-                        All rights reserved.
-                    </p>
+        <!-- 最近讨论与友情链接 -->
+        <div class="news">
+            <div class="card announcement">
+                <h3>本站公告</h3>
+                <ul>
+                    <li><a href="#">洛谷新用户必读</a></li>
+                    <li><a href="#">洛谷主题题库题目规范</a></li>
+                    <li><a href="#">公开比赛与官方比赛规范</a></li>
+                    <li><a href="#">题解审核及反馈要求</a></li>   
+                    <li><a href="#">洛谷讨论区规范</a></li>   
+                    <li><a href="#">洛谷专栏全站推荐规范</a></li>   
+                    <li><a href="#">管理员名单</a></li>   
+                    <li><a href="#">评测机语言环境信息</a></li>   
+                    <li><a href="#">【1.3 更新】洛谷题解补充计划</a></li>   
+                    <li><a href="#">《深入浅出》相关反馈入口</a></li>   
+                    <li><a href="#">2025年度总结已上线</a></li>   
+                    <li><a href="#">洛谷2025年鉴</a></li>   
+                    <li><a href="#">洛谷更新日志</a></li>     
+                </ul>
+            </div>
+            <div class="card links">
+                <h3>友情链接</h3>
+                <div class="link-group">
+                    <h4>推荐题库</h4>
+                    <p>LibreOJ <span class="link-black">|</span> Vijos <span class="link-black">|</span> HydroOJ</p>
+                </div>
+                <div class="link-group">
+                    <h4>洛谷开源项目</h4>
+                    <p>CYaRon 测试数据生成器<br>Markdown*Palettes</p>
+                </div>
+                <div class="link-group">
+                    <h4>洛谷服务</h4>
+                    <p>《深入浅出程序设计竞赛》<br>洛谷网校 算法竞赛学习<br>学校编程训练辅助工具<br>协办企业院校在线编程比赛</p>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        function scrollToId (id) {
-            $('html,body').animate ({
-                scrollTop:($('#'+id).offset().top)
-            },500);
+    </div>
+ </div>
+    </div>
+    <div class="wrapper-xia">
+        <div class="footer-background" style="background: rgb(51,51,51);filter: blur(0px) brightness(100%);"></div>
+        <div class="footer">
+            <img src="https://fecdn.luogu.com.cn/luogu/logo-single.png?0a231b572e3eb12887faedad7d00e829" class="logo-img">
+            <div class="slogan">
+                在洛谷
+                <br>
+                享受Coding的欢乐时光
+            </div>
+            <div class="qr-img">
+            <img src="https://fecdn.luogu.com.cn/luogu/wechat_qr.png?b14b3f14422842b842e982efe6c41eb9" >
+            </div>
+            <div class="info">
+                <p>
+                    <a href="#" class="d-color-default">关于洛谷</a>
+                    |
+                    <a href="#" class="d-color-default">帮助中心</a>
+                    |
+                    <a href="#" class="d-color-default">用户协议</a>
+                    |
+                    <a href="#" class="d-color-default">联系我们</a>
+                    <br>
+                    <a href="#" class="d-color-default">小黑屋</a>
+                    |
+                    <a href="#" class="d-color-default">陶片放逐</a>
+                    |
+                    <a href="#" class="d-color-default">社区规则</a>
+                    |
+                    <a href="#" class="d-color-default">招贤纳才</a>
+                    <br>
+                    Developed by the 
+                    <a href="#" target="_blank" class="d-color-default">Luogu Dev Team</a>
+                    <br>
+                    2013-2026,©洛谷
+                    <br>
+                    增值电信业务经营许可证 沪B2-20200477
+                    <br>
+                    <a href="#" target="_blank" class="d-color-default">沪ICP备18008322号</a>
+                    All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+ <script>
+        const carContainer = document.querySelector('.car-container');
+        const carItem = document.querySelector('.car-item');
+        const dots = document.querySelectorAll('.page span');
+        let currentIndex = 0;
+        const totalItems = carItem.children.length;
+
+        function updateCarousel() {
+            carItem.style.transform = `translateX(-${currentIndex * 647}px)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
         }
+
+        document.querySelector('.prev-button').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        });
+
+        document.querySelector('.next-button').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+        });
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }, 5000); 
     </script>
 </body>
 </html>
