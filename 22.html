@@ -15,6 +15,12 @@
             background-color: #f5f5f5;
         }
         /* 顶部导航栏 */
+        .main {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1200px;
+            width: 80%;
+        }
         .container .link-container {
             align-items: center;
             box-sizing: border-box;
@@ -312,7 +318,7 @@
             width: 94px;
         }
         /* 主内容区 */
-        .main {
+        /* .main {
             box-sizing: border-box;
             display: block;
             font-size: 16px;
@@ -321,7 +327,7 @@
             margin-right: 120px;
             padding: 20px;
             padding-top: 20px;
-        }
+        } */
         /* 轮播图 */
         .carou-container {
             height: 321px;
@@ -397,25 +403,7 @@
             width: 647px;
             height: 260px;
         }
-        /* .car-container .car-item {
-            transform: translateX(-1000px);
-        } */
 
-        /* .carousel-book {
-            width: 150px;
-            margin-right: 30px;
-        }
-        .car-desc h2 {
-            color: #27ae60;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .car-desc p {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 5px 0;
-        } */
         .carou-container .page {
             position: absolute;
             /* bottom: 30px; */
@@ -477,6 +465,7 @@
             display: flex;
             /* flex-direction: column; */
             gap: 10px;
+            justify-content: center;
            margin-bottom: 23px;
         }
         .date-card {
@@ -486,7 +475,9 @@
             margin-top: 40px;
             /* margin-bottom: 25px; */
             /* margin-right: 25px; */
-            position: absolute;
+            position: static;
+            margin: 20px auto;
+            max-width: 200px;
             right: 120px;
             top: 20px;
             /* display: flex; */
@@ -552,7 +543,7 @@
             position: relative;
             height: 205px;
             gap: 20px;
-            background-color: rgb(51, 51, 51);
+            background-color: rgb(138, 138, 138);
         }
         /* .card-left, .card-right {
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -568,7 +559,7 @@
             padding-right: 10px;
             background-color: #ffffff;
             border-radius: 0;
-            flex: 1;
+            flex: 0 0 280px;
             padding: 15px;
             height: 205px;
             width: 25%;
@@ -669,14 +660,210 @@
         /* 公告 */
         .two-g {
             display: flex;
+            /* position: relative; */
             gap: 3px;
             margin-bottom: 25px;
         }
-        .news {
+        .news-1 {
+            /* position: absolute; */
             display: flex;
             flex-direction: column;
             gap: 20px;
+            /* width: 75%; */
             margin-bottom: 25px;
+        }
+        .news-2 {
+            /* position: absolute; */
+            /* width: 25%; */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            
+            margin-bottom: 25px;
+        }
+        /* 比赛 */
+         /* 整体比赛区域 */
+        .section-all {
+            background-color: #fff;
+            padding-top: 25px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-bottom: 25px;
+
+        }
+        .contest-section {
+            /* width: 900px; */
+            width: 100%;
+            padding-right: 75px;
+            /* margin: 20px auto; */
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* 比赛网格容器 */
+        .contest-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 93px 93px 93px;
+            gap: 10px;
+        }
+        
+        /* 单个比赛卡片 */
+        section.contest-card-primary {
+            border: 1px solid  rgb(16,160,234);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        section.contest-card-success {
+            border: 1px solid  rgb(201,231,201);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        section.contest-card-danger {
+            border: 1px solid rgb(245,206,205);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .card-header-primary {
+            background-color: rgb(14,144,210);
+            color: rgb(255, 255, 255);
+            padding: 12px;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 19.5px;
+        }
+        .card-header-success {
+            background-color: rgba(94,185,94,0.15);
+            color: rgb(94,185,94);
+            padding: 12px;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 19.5px;
+        }
+        .card-header-danger {
+            background-color: rgba(221,81,76,0.15);
+            color: rgb(221,81,76);
+            padding: 12px;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 19.5px;
+        }
+
+        .card-body {
+            padding: 10px 12px;
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            background-color: #f9f9f9;
+        }
+
+        .card-body.ongoing {
+            background-color: #ffffff;
+            display: flex;
+            padding: 12px;
+            font-size: 13px;
+            line-height: 19.5px;
+            text-size-adjust: 100%;
+        }
+
+        .card-body.upcoming {
+            background-color: #fff;
+            padding: 12px;
+            font-size: 13px;
+            line-height: 19.5px;
+        }
+
+        .card-body.ended {
+            background-color: #ffffff;
+            padding: 12px;
+            font-size: 13px;
+            line-height: 19.5px;
+        }
+        .card-tag-out {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+            line-height: 15px;
+            font-size: 10px;
+        }
+        .card-tag-outl {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+            line-height: 15px;
+            font-size: 10px;
+        }
+        .line-pri {
+            color: rgb(52,73,94);
+            font-size: 10px;
+            line-height: 15px;
+        }
+        .line-suc {
+            color: rgb(94,185,94);
+            font-size: 10px;
+            line-height: 15px;
+        }
+        .line-dan {
+            color: rgb(231,76,60);
+            font-size: 10px;
+            line-height: 15px;
+        }
+        
+        /* 标签样式 */
+        .tag {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            color: rgb(255, 255, 255);
+            margin-right: 5px;
+            font-weight: 700;
+        }
+
+        .tag.official {
+            background-color: rgb(231,76,60);
+        }
+
+        .tag.team {
+            background-color: #28a745;
+        }
+
+        .tag.icpc {
+            background-color: #6f42c1;
+        }
+
+        .tag.ioi {
+            background-color: rgb(241,196,15);
+            /* padding-right: 2px; */
+            /* color: rgb(255, 255, 255); */
+            /* font-size: 12px; */
+            /* font-weight: 700; */
+            
+        }
+
+        .tag.rated {
+            background-color: rgb(94,185,94);
+            float: right;
+        }
+
+        /* 状态和时间信息 */
+        .contest-status {
+            font-size: 10px;
+            color: rgb(156, 156, 156);
+            /* margin: 5px 0; */
+        }
+        .contest-team {
+            color: rgb(52,152,219);
+        }
+        .contest-time {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
         }
         /* 公告 */
         .match-list {
@@ -726,7 +913,7 @@
             padding-right: 18px;
             padding-left: 18px;
             padding-bottom: 25px;
-            margin-left: 21px;
+            margin-left: 20px;
             line-height: 24px;
             margin-bottom: 20px;
             flex: 1;
@@ -1073,26 +1260,117 @@
         </div>
     <div class="two-g">
         <!-- 近期比赛与最近讨论 -->
-        <div class="news">
-            <div class="card match-list">
-                <h3>近期比赛</h3>
-                <div class="match-item">
-                    <span class="match-tag red">官方比赛</span>
-                    <div class="match-info">
-                        <div class="match-title">[LGR-262-Div.1] 洛谷1月月赛 III</div>
-                        <div class="match-time">未开始 168时36分后<br>01-18 14:00 ~ 01-18 18:00</div>
+        <div class="news-1">
+            <div class="section-all">
+        <div class="contest-section">
+        <h2 class="section-title">近期比赛</h2>
+        <div class="contest-grid">
+            <!-- 第一个比赛卡片 -->
+            <section class="contest-card-primary">
+                <header class="card-header-primary">洛谷 2025 年度试题推荐选集</header>
+                <div class="card-body ongoing">
+                    <span class="card-tag-out">
+                    <span class="tag official">官方比赛</span>
+                    <span class="tag ioi">IOI</span>
+                    </span>
+                    <span class="card-tag-outl">
+                    <div class="contest-status"><strong class="line-pri">进行中</strong> 剩5天19时29分</div>
+                    <div class="contest-team">洛谷官方团队</div>
+                    </span>
+                    <div>
+                    <div class="contest-time">01-24 17:00 <br> 02-04 17:00</div>
                     </div>
-                    <span class="match-tag">Rated</span>
+      
                 </div>
-                <div class="match-item">
-                    <span class="match-tag red">官方比赛</span>
-                    <div class="match-info">
-                        <div class="match-title">[LGR-262-Div.2] 洛谷1月月赛 III</div>
-                        <div class="match-time">未开始 168时36分后<br>01-18 14:00 ~ 01-18 18:00</div>
-                    </div>
-                    <span class="match-tag">Rated</span>
+            </section>
+
+            <!-- 第二个比赛卡片 -->
+            <section class="contest-card-primary">
+                <header class="card-header-primary">嘟嘟哒哒大作战</header>
+                <div class="card-body ongoing">
+                    <span class="card-tag-out">
+                    <span class="tag team">团队公开赛</span>
+                    <span class="tag ioi">IOI</span>
+                    </span>
+                    <span class="card-tag-outl">
+                    <div class="contest-status"><strong class="line-pri">进行中</strong> 剩29分</div>
+                    <div class="contest-team">南极洲企鹅语学校</div>
+                    <div class="contest-time">01-29 18:00 <br> 01-29 22:00</div>
+                    
+                    </span>
                 </div>
-            </div>
+            </section>
+
+            <!-- 第三个比赛卡片 -->
+            <section class="contest-card-success">
+                <header class="card-header-success">IOI 2025/2026 #4 Unofficial Mirror</header>
+                <div class="card-body upcoming">
+                    <span class="card-tag-out">
+                    <span class="tag team">团队公开赛</span>
+                    <span class="tag ioi">IOI</span>
+                    </span>
+                    <span class="card-tag-outl">
+                    <div class="contest-status"><strong class="line-suc">未开始</strong> 17时29分后</div>
+                    <div class="contest-team">Unofficial Mirror 工作组</div>
+                    <div class="contest-time">01-30 15:00 <br> 01-30 18:00</div>
+                    
+                    </span>
+                </div>
+            </section>
+
+            <!-- 第四个比赛卡片 -->
+            <section class="contest-card-success">
+                <header class="card-header-success">【LGR-263-Div.4】洛谷入门赛 #43 <span class="tag rated">Rated</span></header>
+                <div class="card-body upcoming">
+                    <span class="card-tag-out">
+                    <span class="tag official">官方比赛</span>
+                    <span class="tag ioi">IOI</span>
+                    </span>
+                    <span class="card-tag-outl">
+                    <div class="contest-status"><strong class="line-suc">未开始</strong> 21时29分后</div>
+                    <div class="contest-team">洛谷官方团队</div>
+                    <div class="contest-time">01-30 19:00 <br> 01-30 21:00</div>
+                    
+                    </span>
+                </div>
+            </section>
+
+            <!-- 第五个比赛卡片 -->
+            <section class="contest-card-danger">
+                <header class="card-header-danger">CPC2024 Chengdu R] ICPC 2024 区域赛 <span class="tag rated">Rated</span></header>
+                <div class="card-body ended">
+                    <span class="card-tag-out">
+                    <span class="tag official">官方比赛</span>
+                    <span class="tag icpc">ICPC</span>
+                    </span>
+                    <span class="card-tag-outl">
+                    <div class="contest-status"><strong class="line-dan">已结束</strong> 比赛已结束</div>
+                    <div class="contest-team">洛谷官方团队</div>
+                    <div class="contest-time">01-26 13:00 <br> 01-26 18:00</div>
+                    
+                    </span>
+                </div>
+            </section>
+
+            <!-- 第六个比赛卡片 -->
+            <section class="contest-card-danger">
+                <header class="card-header-danger">chaynOI Round 2 <span class="tag rated">Rated</span></header>
+                <div class="card-body ended">
+                    <sapn class="card-tag-out">
+                    <span class="tag team">团队公开赛</span>
+                    <span class="tag ioi">IOI</span>
+                    </sapn>
+                    <span class="card-tag-outl">
+                    <div class="contest-status"><strong class="line-dan">已结束</strong> 比赛已结束</div>
+                    <div class="contest-team">chaynOI</div>
+                    <div class="contest-time">01-25 14:00 <br> 01-25 18:00</div>
+                    
+                    </span>
+                </div>
+            </section>
+        </div>
+    </div>
+    </div>
             <div class="card discussion">
                 <h3>最近讨论</h3>
                 <div class="discussion-list">
@@ -1144,7 +1422,7 @@
         </div>
 
         <!-- 最近讨论与友情链接 -->
-        <div class="news">
+        <div class="news-2">
             <div class="card announcement">
                 <h3>本站公告</h3>
                 <ul>
