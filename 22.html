@@ -361,9 +361,15 @@
             left: 20px;
             height: 20px;
             width: 20px;
+            display: flex;
+            border-radius: 50%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
             background-color: rgba(0, 0, 0, 0.1);
-            color: #f0f0f0;
+            color: rgba(255, 255, 255, 0.64);
             z-index: 1;
+            font-weight: 700;
             /* transform: translateY(-50%); */
             /* background: repeat url('C:\Users\kouki\Desktop\rav\lyw.jpg') ; */
         }
@@ -373,19 +379,24 @@
             right: 20px;
             width: 20px;
             height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
             /* transform: translateY(-50%); */
             background-color: rgba(0, 0, 0, 0.1);
-            color: #f0f0f0;
+            color: rgba(255, 255, 255, 0.64);
             z-index: 1;
             /* background: no-repeat url('C:\Users\kouki\Desktop\rav\lyw.jpg') ; */
         }
         .car-container .prev-button:hover {
             background-color: rgba(0, 0, 0, 0.65);
-            color: #fff;
+            color: #ffffff5b;
         }
         .car-container .next-button:hover {
             background-color: rgba(0, 0, 0, 0.65);
-            color: #fff;
+            color: #ffffff5b;
         }
         .car-item {
             min-width: 3000px;
@@ -1289,8 +1300,8 @@
                 <img src="http://ipic.luogu.com.cn/yugu26s/ap/sxbanner.png" class="carousel-book">
                 <img src="https://ipic.luogu.com.cn/yugu24a/banner-jinjie.png" class="carousel-book">
             </div>
-            <div class="button prev-button"></div>
-            <div class="button next-button"></div>
+            <div class="button prev-button"><</div>
+            <div class="button next-button">></div>
             
             <!-- <div class="car-desc">
                 <div class="button prev-btn"></div>
@@ -1358,7 +1369,7 @@
         <div class="contest-section">
         <h2 class="section-title">近期比赛</h2>
         <div class="contest-grid">
-            <!-- 第一个比赛卡片 -->
+            <!-- 第一个比赛 -->
             <section class="contest-card-primary">
                 <header class="card-header-primary">洛谷 2025 年度试题推荐选集</header>
                 <div class="card-body ongoing">
@@ -1377,7 +1388,7 @@
                 </div>
             </section>
 
-            <!-- 第二个比赛卡片 -->
+            <!-- 第二个比赛 -->
             <section class="contest-card-primary">
                 <header class="card-header-primary">嘟嘟哒哒大作战</header>
                 <div class="card-body ongoing">
@@ -1395,7 +1406,7 @@
                 </div>
             </section>
 
-            <!-- 第三个比赛卡片 -->
+            <!-- 第三个比赛 -->
             <section class="contest-card-success">
                 <header class="card-header-success">IOI 2025/2026 #4 Unofficial Mirror</header>
                 <div class="card-body upcoming">
@@ -1413,7 +1424,7 @@
                 </div>
             </section>
 
-            <!-- 第四个比赛卡片 -->
+            <!-- 第四个比赛 -->
             <section class="contest-card-success">
                 <header class="card-header-success">【LGR-263-Div.4】洛谷入门赛 #43 <span class="tag rated">Rated</span></header>
                 <div class="card-body upcoming">
@@ -1431,7 +1442,7 @@
                 </div>
             </section>
 
-            <!-- 第五个比赛卡片 -->
+            <!-- 第五个比赛 -->
             <section class="contest-card-danger">
                 <header class="card-header-danger">CPC2024 Chengdu R] ICPC 2024 区域赛 <span class="tag rated">Rated</span></header>
                 <div class="card-body ended">
@@ -1449,7 +1460,7 @@
                 </div>
             </section>
 
-            <!-- 第六个比赛卡片 -->
+            <!-- 第六个比赛 -->
             <section class="contest-card-danger">
                 <header class="card-header-danger">chaynOI Round 2 <span class="tag rated">Rated</span></header>
                 <div class="card-body ended">
@@ -1469,6 +1480,7 @@
         </div>
     </div>
     </div>
+    <!-- 最近讨论 -->
             <div class="card discussion">
                 <h3>最近讨论</h3>
                 <div class="discussion-list">
@@ -1647,7 +1659,7 @@
             
         </div>
 
-        <!-- 友情链接 -->
+        <!-- 公告 -->
         <div class="news-2">
             <div class="card announcement">
                 <h3>本站公告</h3>
@@ -1667,6 +1679,7 @@
                     <li><a href="#">洛谷更新日志</a></li>     
                 </ul>
             </div>
+            <!-- 友情链接 -->
             <div class="card links">
                 <h3>友情链接</h3>
                 <div class="link-group">
