@@ -979,42 +979,93 @@
             /* height: 320px; */
         }
         .discussion-list {
+            /* background-color: #fff; */
             margin-top: 15px;
             display: grid;
             width: 780px;
             padding-right: 90px;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            grid-template-rows: 93px 93px 93px;
+            row-gap: 5px;
+            column-gap: 10px;
+            grid-template-columns: repeat(2,1fr);
+            /* gap: 10px; */
             margin-bottom: 25px;
         }
         .discussion-item {
             display: flex;
             gap: 10px;
             padding: 10px;
-            background-color: #fafafa;
+            /* background-color: #fafafa; */
             border-radius: 4px;
-            border: 1px solid #2ea0e7;
+            border: 1px solid rgb(16,160,234);
+        }
+        .discussion-info {
+            margin-right: 10px;
+            font-size: 13px;
+            height: auto;
+            width: auto;
+            line-height: 19.5px;
+            vertical-align: top;
+            color: rgba(0,0,0,0.75);
         }
         .avatar {
             width: 40px;
             height: 40px;
             border-radius: 50%;
+            border-bottom: 1px solid rgba(0,0,0,0);
+            cursor: pointer;
         }
         .discussion-title {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 3px;
+            font-size: 13px;
+            color: rgb(52,152,219);
+            /* margin-bottom: 3px; */
+            text-decoration: none;
+            cursor: pointer;
         }
         .discussion-meta {
-            font-size: 12px;
-            color: #999;
+            display: flex;
+            flex-direction: column;
+            font-size: 10px;
+            color: rgb(127,127,127);
+            line-height: 15px;
+        }
+        .discussion-meta a {
+            color: rgb(52,152,219);
+        }
+        .luogu-line-purple {
+            font-size: 10px;
+            font-weight: 700;
+            color: rgb(142,68,173);
+            cursor: pointer;
+        }
+        .luogu-line-red {
+            font-size: 10px;
+            font-weight: 700;
+            color: rgb(231,76,60);
+            cursor: pointer;
+        }
+        .luogu-line-green {
+            font-size: 10px;
+            font-weight: 400;
+            color: rgb(94,185,94);
+            cursor: pointer;
+        }
+        .line-a {
+            display: flex;
+            gap: 3px;
+        }
+        .line-b {
+            display: flex;
+            gap: 3px;
         }
         .pin {
-            background-color: #e74c3c;
+            background-color: rgb(231,76,60);
             color: #fff;
-            padding: 1px 5px;
+            padding: 3px 7.5px;
             border-radius: 3px;
-            font-size: 11px;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 12px;
             margin-left: 5px;
         }
         .link-group {
@@ -1033,6 +1084,7 @@
             color: #3498db;
             line-height: 1.5;
         }
+        /* 最下 */
         .wrapper-xia {
             position: relative;
             box-sizing: border-box;
@@ -1405,46 +1457,88 @@
             <div class="card discussion">
                 <h3>最近讨论</h3>
                 <div class="discussion-list">
+
                     <div class="discussion-item">
+                        <div>
                         <img src="https://cdn.luogu.com.cn/upload/usericon/3.png" alt="用户头像" class="avatar">
+                        </div>
                         <div class="discussion-info">
                             <div class="discussion-title">RemoteJudge 服务中断情况公告</div>
-                            <div class="discussion-meta">洛谷 站务版 @04-19 15:12 5578回复 <span class="pin">置顶</span></div>
+                            <div class="discussion-meta">
+                                <div class="line-a">
+                                <div class="luogu-line-purple">洛谷</div>In <a> 站务版</a>
+                                </div>
+                                <div class="line-b">
+                                <span class="discussion-meta"> @04-19 15:12 5578回复</span> <span class="pin">置顶</span></div>
+                            </div> 
                         </div>
                     </div>
+
                     <div class="discussion-item">
+                        <div>
                         <img src="https://cdn.luogu.com.cn/upload/usericon/65363.png" alt="用户头像" class="avatar">
+                        </div>
                         <div class="discussion-info">
                             <div class="discussion-title">洛谷1月月赛III 赛时答疑贴</div>
-                            <div class="discussion-meta">csyakuoi 学术版 @01-17 21:03 30回复 <span class="pin">置顶</span></div>
+                            <div class="discussion-meta">
+                                <div class="line-a">
+                                <div class="luogu-line-green">csyakuoi</div>In <a>学术版</a>
+                                </div>
+                                <div class="line-b">
+                                <span class="discussion-meta"> @01-17 21:03 30回复</span> <span class="pin">置顶</span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="discussion-item">
                         <img src="https://cdn.luogu.com.cn/upload/usericon/1.png" alt="用户头像" class="avatar">
                         <div class="discussion-info">
                             <div class="discussion-title">[GTOI] Round 2 赛后致歉贴</div>
-                            <div class="discussion-meta">ARISz 学术版 @01-17 19:40 80回复 <span class="pin">置顶</span></div>
+                            <div class="discussion-meta">
+                                <div class="line-a">
+                                <div class="luogu-line-red">ARISz</div>In <a>学术版</a>
+                                </div>
+                                <div class="line-b">
+                                    <span class="discussion-meta">@01-17 19:40 80回复</span> <span class="pin">置顶</span></div>
+                                </div>
                         </div>
                     </div>
                     <div class="discussion-item">
                         <img src="https://cdn.luogu.com.cn/upload/usericon/1.png" alt="用户头像" class="avatar">
                         <div class="discussion-info">
                             <div class="discussion-title">来推荐一道好题！</div>
-                            <div class="discussion-meta">chen_zhe 站务版 @01-13 17:34 225回复 <span class="pin">置顶</span></div>
+                            <div class="discussion-meta">
+                                <div class="line-a">
+                                <div class="luogu-line-purple">chen_zhe</div>In <a>站务版</a>
+                                </div>
+                                <div class="line-b">
+                                <span class="discussion-meta">@01-13 17:34 225回复</span> <span class="pin">置顶</span></div>
+                                </div>
                         </div>
                     </div>
                     <div class="discussion-item">
                         <img src="https://cdn.luogu.com.cn/upload/usericon/1.png" alt="用户头像" class="avatar">
                         <div class="discussion-info">
                             <div class="discussion-title">省选计划 2025-2026</div>
-                            <div class="discussion-meta">kkksc03 吉祥物版 @01-14 16:00 381回复 <span class="pin">置顶</span></div>
+                            <div class="discussion-meta">
+                                <div class="line-a">
+                                <div class="luogu-line-purple">kkksc03</div>In <a>吉祥物版</a>
+                                </div>
+                                <div class="line-b">
+                                <span class="discussion-meta">@01-14 16:00 381回复</span> <span class="pin">置顶</span></div>
+                                </div>
                         </div>
                     </div>
                     <div class="discussion-item">
                         <img src="https://cdn.luogu.com.cn/upload/usericon/1.png" alt="用户头像" class="avatar">
                         <div class="discussion-info">
                             <div class="discussion-title">求条80pts WA on #3</div>
-                            <div class="discussion-meta">congruilu P1192 省选问题 @01-17 21:19 0回复</div>
+                            <div class="discussion-meta">
+                                <div class="line-a">
+                                <div class="luogu-line-green">congruilu</div>In <a>P1192 省选问题</a>
+                            </div>
+                            <div class="line-b">
+                                <span>@01-17 21:19 0回复</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1452,7 +1546,7 @@
             
         </div>
 
-        <!-- 最近讨论与友情链接 -->
+        <!-- 友情链接 -->
         <div class="news-2">
             <div class="card announcement">
                 <h3>本站公告</h3>
