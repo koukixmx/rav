@@ -732,7 +732,7 @@
         .card-header-primary {
             background-color: rgb(14,144,210);
             color: rgb(255, 255, 255);
-            padding: 12px;
+            padding: 6px 12px;
             font-weight: bold;
             font-size: 13px;
             line-height: 19.5px;
@@ -740,7 +740,7 @@
         .card-header-success {
             background-color: rgba(94,185,94,0.15);
             color: rgb(94,185,94);
-            padding: 12px;
+            padding: 6px 12px;
             font-weight: bold;
             font-size: 13px;
             line-height: 19.5px;
@@ -748,7 +748,7 @@
         .card-header-danger {
             background-color: rgba(221,81,76,0.15);
             color: rgb(221,81,76);
-            padding: 12px;
+            padding: 6px 12px;
             font-weight: bold;
             font-size: 13px;
             line-height: 19.5px;
@@ -769,6 +769,7 @@
             font-size: 13px;
             line-height: 19.5px;
             text-size-adjust: 100%;
+            /* flex: 1; */
         }
 
         .card-body.upcoming {
@@ -776,6 +777,7 @@
             padding: 12px;
             font-size: 13px;
             line-height: 19.5px;
+            /* flex: 1; */
         }
 
         .card-body.ended {
@@ -783,6 +785,7 @@
             padding: 12px;
             font-size: 13px;
             line-height: 19.5px;
+            /* flex: 1; */
         }
         .card-tag-out {
             display: flex;
@@ -817,28 +820,42 @@
         /* 标签样式 */
         .tag {
             display: inline-block;
-            padding: 2px 6px;
-            border-radius: 3px;
+            box-sizing: border-box;
+            /* padding: 2px 6px; */
+            padding: 3px 7.5px;
+            border-radius: 2px;
             font-size: 12px;
+            line-height: 12px;
             color: rgb(255, 255, 255);
-            margin-right: 5px;
+            /* margin-right: 5px; */
             font-weight: 700;
+            min-width: 10px;
+            text-size-adjust: 100%;
+            text-align: center;
+            /* vertical-align: baseline; */
+            /* white-space-collapse: collapse; */
         }
 
         .tag.official {
             background-color: rgb(231,76,60);
+            /* padding: 3px 7.5px; */
         }
 
         .tag.team {
-            background-color: #28a745;
+            background-color: rgba(5,67,16,0.75);
+            /* padding: 3px 7.5px; */
+            white-space: nowrap;
         }
 
         .tag.icpc {
-            background-color: #6f42c1;
+            background-color: rgb(142,68,173);
+            width: 70%;
         }
 
         .tag.ioi {
             background-color: rgb(241,196,15);
+            min-width: 10px;
+            width: 50%;
             /* padding-right: 2px; */
             /* color: rgb(255, 255, 255); */
             /* font-size: 12px; */
@@ -859,11 +876,20 @@
         }
         .contest-team {
             color: rgb(52,152,219);
+            white-space: nowrap;
         }
         .contest-time {
-            font-size: 12px;
-            color: #666;
-            margin-top: 4px;
+            font-size: 10px;
+            color: rgb(127,127,127);
+            line-height: 17.5px;
+            /* margin-top: 4px; */
+            /* margin-left: 65px; */
+            /* margin-right: 20px; */
+            white-space: nowrap;
+            /* margin-left: auto; */
+        }
+        .time {
+            margin-left: auto;
         }
         /* 公告 */
         .match-list {
@@ -1277,7 +1303,7 @@
                     <div class="contest-status"><strong class="line-pri">进行中</strong> 剩5天19时29分</div>
                     <div class="contest-team">洛谷官方团队</div>
                     </span>
-                    <div>
+                    <div class="time">
                     <div class="contest-time">01-24 17:00 <br> 02-04 17:00</div>
                     </div>
       
@@ -1294,10 +1320,11 @@
                     </span>
                     <span class="card-tag-outl">
                     <div class="contest-status"><strong class="line-pri">进行中</strong> 剩29分</div>
-                    <div class="contest-team">南极洲企鹅语学校</div>
-                    <div class="contest-time">01-29 18:00 <br> 01-29 22:00</div>
-                    
+                    <div class="contest-team">南极洲企鹅语学校</div>  
                     </span>
+                    <div class="time">
+                    <div class="contest-time">01-29 18:00 <br> 01-29 22:00</div>
+                    </div>
                 </div>
             </section>
 
@@ -1311,10 +1338,11 @@
                     </span>
                     <span class="card-tag-outl">
                     <div class="contest-status"><strong class="line-suc">未开始</strong> 17时29分后</div>
-                    <div class="contest-team">Unofficial Mirror 工作组</div>
-                    <div class="contest-time">01-30 15:00 <br> 01-30 18:00</div>
-                    
+                    <div class="contest-team">Unofficial Mirror 工作组</div> 
                     </span>
+                    <div class="time">
+                    <div class="contest-time">01-30 15:00 <br> 01-30 18:00</div>
+                    </div>
                 </div>
             </section>
 
@@ -1328,10 +1356,11 @@
                     </span>
                     <span class="card-tag-outl">
                     <div class="contest-status"><strong class="line-suc">未开始</strong> 21时29分后</div>
-                    <div class="contest-team">洛谷官方团队</div>
-                    <div class="contest-time">01-30 19:00 <br> 01-30 21:00</div>
-                    
+                    <div class="contest-team">洛谷官方团队</div> 
                     </span>
+                    <div class="time">
+                    <div class="contest-time">01-30 19:00 <br> 01-30 21:00</div>
+                    </div>
                 </div>
             </section>
 
@@ -1346,9 +1375,10 @@
                     <span class="card-tag-outl">
                     <div class="contest-status"><strong class="line-dan">已结束</strong> 比赛已结束</div>
                     <div class="contest-team">洛谷官方团队</div>
-                    <div class="contest-time">01-26 13:00 <br> 01-26 18:00</div>
-                    
                     </span>
+                    <div class="time">
+                    <div class="contest-time">01-26 13:00 <br> 01-26 18:00</div>
+                    </div>
                 </div>
             </section>
 
@@ -1362,10 +1392,11 @@
                     </sapn>
                     <span class="card-tag-outl">
                     <div class="contest-status"><strong class="line-dan">已结束</strong> 比赛已结束</div>
-                    <div class="contest-team">chaynOI</div>
-                    <div class="contest-time">01-25 14:00 <br> 01-25 18:00</div>
-                    
+                    <div class="contest-team">chaynOI</div> 
                     </span>
+                    <div class="time">
+                    <div class="contest-time">01-25 14:00 <br> 01-25 18:00</div>
+                    </div>
                 </div>
             </section>
         </div>
